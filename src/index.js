@@ -1,10 +1,7 @@
 import { DB_NAME, PORT } from './constants.js';
-import express from 'express';
 import mongoose from 'mongoose';
 import connectDB from './db/index.js';
 import { app } from './app.js';
-
-// const app = express();
 
 connectDB().then(() => {
 

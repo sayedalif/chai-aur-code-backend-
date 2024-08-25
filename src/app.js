@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+// multer upload import
+import { upload } from './middleware/multer.middleware.js';
+
 const app = express();
 
 app.use(cors(
@@ -24,8 +27,21 @@ app.use(cookieParser());
 // routes import
 import userRouter from './routes/user.routes.js';
 
+
 // routes declaration 
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1/users",
+  upload.fields([
+    {
+      name: 'avatar',
+      maxCount: 1,
+    },
+    {
+      name: 'coverImage',
+      maxCount: 1
+    }
+  ]),
+  userRouter
+);
 
 
 export { app };
