@@ -2,14 +2,13 @@ import { v2 as cloudinary } from "cloudinary"
 import fs from "fs"
 
 
-const cloudinaryConfig = cloudinary.config({
+cloudinary.config({
     // !problem could not get the cloud_name with env variable
-    cloud_name: 'duvrfmlwa',
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    // cloud_name: 'duvrfmlwa',
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
-console.log("🚀 ~ cloudinaryConfig:", cloudinaryConfig);
 
 const uploadOnCloudinary = async (localFilePath) => {
     try {
