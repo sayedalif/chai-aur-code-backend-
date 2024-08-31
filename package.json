@@ -7,9 +7,9 @@
     "dev": "node --watch --env-file=.env src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Alif",
   "license": "ISC",
-  "description": "",
+  "description": "this is a course from youtube channel chai aur code(backend series)",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.4.0",
