@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const VideoSchema = new mongoose.Schema(
   {
@@ -36,5 +37,7 @@ const VideoSchema = new mongoose.Schema(
     },
   }
 );
+
+VideoSchema.plugin(mongooseAggregatePaginate);
 
 export const Video = mongoose.Schema('Video', VideoSchema);
